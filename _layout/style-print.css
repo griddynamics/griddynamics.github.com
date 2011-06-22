@@ -1,0 +1,16 @@
+/*--------------------------------------------------------------------------------------------- 
+
+	Print Css Stylesheet
+
+---------------------------------------------------------------------------------------------*/
+
+.no-print, .pdf, #footer, .inner-page-title-container img, .pagination, #search { display:none; }
+
+body{ padding:0; width:100%; }
+
+.inner-page-title-container{ height:100px; }
+.inner-page-title{ padding:0; height:80px; width:100%; position:relative; }
+
+#wrap{ width:100%; margin:0; border:none; -moz-box-shadow:none; -webkit-box-shadow:none; box-shadow:none; }
+
+

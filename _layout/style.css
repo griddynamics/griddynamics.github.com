@@ -1,0 +1,456 @@
+/*---------------------------------------------------------------------------------------------
+
+	CSS Stylesheet
+	
+	T.o.C
+		=RESET
+		=LAYOUT
+		=PAGES
+			=INDEX
+			=TEAM
+			=NEWS
+			=TESTIMONIALS
+			=SERVICES
+			=PORTOFOLIO
+			=BLOG
+			=CONTACT	
+					
+-----------------------------------------------------------------------------------------------*/
+
+
+/* =RESET
+-----------------------------------------------------------------------------------------------*/
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline}body{line-height:1;color:black;background:white}ol,ul{list-style:none}table{border-collapse:separate;border-spacing:0}/* tables still need 'cellspacing="0"' in the markup */caption,th,td{text-align:left;font-weight:normal}blockquote:before,blockquote:after,q:before,q:after{content:""}blockquote,q{quotes:""""}
+
+
+/* =GENERAL
+-----------------------------------------------------------------------------------------------*/
+	
+	body{ 
+		background:#EFF1F1 url(images/bg-body.jpg) repeat top left;
+		
+		/*
+		background:#EFF1F1 url(images/bg-body2.jpg) repeat top left;
+		background:#EFF1F1 url(images/bg-body3.jpg) repeat top left;
+		background:#EFF1F1 url(images/bg-body4.jpg) repeat top left;
+		background:#EFF1F1 url(images/bg-body5.jpg) repeat top left;
+		*/
+		
+		font:12px Arial, sans-serif; 
+		line-height:20px;
+		color:#666666;
+	}
+	
+		/* =headings
+		-------------------------------------------------------------- */
+		
+		h1,h2,h3,h4,h5,h6{ font-weight: bold; color:#252525; }
+		
+		h1{ font-size:28px; line-height:30px; margin-bottom:12px; }
+		h2{ font-size:24px; line-height:26px; margin-bottom:12px; }
+		h3{ font-size:18px; line-height:20px; margin-bottom:8px;  }
+		h4{ font-size:14px; line-height:15px; margin-bottom:8px;  }
+		h5{ font-size:13px; line-height:15px; margin-bottom:8px;  }
+		h6{ font-size:13px; line-height:15px; margin-bottom:8px;  }
+		
+		/* =text-elements
+		-------------------------------------------------------------- */
+		
+		a{ text-decoration:none; color:#346699; }
+		a:hover{ text-decoration:underline;  }
+		h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover,h5 a:hover, h6 a:hover{ text-decoration:none; }
+		a img{ border:none; }
+		
+		strong{ font-weight: bold; color:#252525; }
+		em{ font-style: italic; }
+		
+		p, ul, ol, pre, code{ margin-bottom:20px; }
+		
+			p.last{ margin-bottom:0; }
+					
+		ul{ list-style-type:circle; list-style-position:inside; }
+		
+			ul.checklist{ list-style-image:url(images/bg-checklist.png); }
+		
+		ol{ list-style-type:decimal; list-style-position:inside; }
+		
+		blockquote{ padding:5px 20px 5px 60px; line-height:24px; background:url(images/quote.png) no-repeat top left; color:#999999; }
+		blockquote span{ color:#666666; }
+		
+			.blockquote-left{ width:250px; float:left; }
+			.blockquote-right{ width:250px; float:right; }					 
+					 
+		pre, code{ border:1px solid #efefef; border-left-width:5px; display:block; padding:10px; font-size:11px; font-family: monospace; background-color:#f5f5f5; }
+
+		/* due to IE <HR> margin bugs I had to made classed and apply them to div to achieve the effect of a <HR> */
+		hr{ border:none; height:1px; margin:30px 0; background-color:#efefef; color:#efefef; }
+		.hr{ border-top:1px solid #efefef; margin:30px 0; }
+
+			
+		/* =tables
+		-------------------------------------------------------------- */
+		
+		table{ border-collapse:separate; border-spacing:0; border-top-width:5px; margin-bottom:20px; border:1px solid #efefef;  }
+		th{ padding:10px 15px; text-transform:uppercase; font-weight:bold; }
+		td{ padding:10px 15px; border-top:1px solid #efefef; }
+		tr.alt{ background-color:#f5f5f5; }
+
+
+		/* =forms-messages
+		-------------------------------------------------------------- */
+		
+		label{ font-weight:bold; color:#000000; }
+			label span.required{ color:#ff0000; }
+		
+		fieldset{ padding:15px; margin:0 0 20px 0; border:1px solid #efefef; }
+		legend{ font-weight: bold; }
+		
+		input[type=text], input[type=password], input.text, textarea{ background-color:#ffffff; border:1px solid #e1e1e1; }
+		input[type=text]:focus, input[type=password]:focus, input.text:focus, textarea:focus{ border-color:#cccccc; }
+		select{ border-width:1px; border-style:solid; background-color:#ffffff;  }
+		
+		input[type=text], input[type=password], input.text, textarea, select{ margin:5px 0; }
+		
+		input.text{ width:250px; padding:5px; }
+		textarea{ width:380px; height:125px; padding:5px; }
+
+		.errormsg, .successmsg, .infomsg, .noticemsg{ padding:10px 10px 10px 40px; margin-bottom:10px; border:1px solid #dddddd; border-left-width:5px; }
+		.errormsg{ border-color:#fbc2c4; background:#fbe3e4 url(images/bg-msg.png) no-repeat 0 0; color:#8a1f11; }
+		.errormsg a{ color:#8a1f11; }
+		.successmsg{ border-color:#c6d880; background:#e6efc2 url(images/bg-msg.png) no-repeat 0 -220px; color:#264409; }
+		.successmsg a{ color:#264409; }
+		.infomsg{ border-color:#92cae4; background:#d5edf8 url(images/bg-msg.png) no-repeat 0 -72px; color:#205791; }
+		.infomsg a{ color:#205791; }
+		.noticemsg{ border-color:#ffd324; background:#fff6bf url(images/bg-msg.png) no-repeat 0 -148px; color:#514721; }
+		.noticemsg a{ color:#514721; }
+
+
+		/* =default-classes
+		-------------------------------------------------------------- */
+		
+		.img-align-left{ margin:5px 10px 0 0; float:left; }
+		.img-align-right{ margin:5px 0 0 10px; float:right; }
+		
+		.text-right{ text-align:right; }
+		.text-center{ text-align:center; }
+		
+		.text-highlight{ padding:2px 5px; background-color:#ffd324; color:#111111; }
+		.text-highlight2{ padding:2px 5px; background-color:#c6d880; color:#111111; }
+
+		.bordered{ padding:5px; border:1px solid #efefef; }
+
+
+		/* =grid
+		-------------------------------------------------------------- */
+
+		/* Clear Fix Hack - add  class="fixed"  to div's that have floated elements in them */
+		.fixed:after{content:"."; display:block; height:0; clear:both; visibility:hidden;}
+			.fixed{display:block;}
+			/*  \*/
+			.fixed{min-height:1%;}
+			* html .fixed{height:1%;}
+				
+		.row{ width:940px; }
+			
+			.col-700{ width:700px; float:left; margin-right:20px; }
+			.col-580{ width:580px; float:left; margin-right:20px; }
+			.col-520{ width:520px; float:left; margin-right:20px; }
+			.col-460{ width:460px; float:left; margin-right:20px; }
+			.col-340{ width:340px; float:left; margin-right:20px; }
+			.col-300{ width:300px; float:left; margin-right:20px; }
+			.col-220{ width:220px; float:left; margin-right:20px; }
+			.col-180{ width:180px; float:left; margin-right:20px; }
+			.col-160{ width:160px; float:left; margin-right:20px; }
+			
+		.last{ margin-right:0px; }
+		.clear{ clear:both; }
+		.block{ display:block; }
+		.hide{ display: none; }	
+		
+
+/* =LAYOUT
+-----------------------------------------------------------------------------------------------*/
+
+	#wrap{ width:940px; padding:0 40px; margin:0 auto; background-color:#ffffff;
+		   -moz-box-shadow:0 -10px 10px 0 #333; -webkit-box-shadow:0 -10px 10px 0 #333; box-shadow:0 -10px 10px 0 #333; }
+	
+	
+		#header{ padding-top:30px; }
+		
+		
+			.dropdown-container{ position:relative; z-index:10; }  /* IE6 and IE7 fix for the dropdown  */
+			.slideshow-container{ position:relative; z-index:5; }  /* menu showing below the slider bug */
+			.inner-page-title-container{ position:relative; z-index:5; }
+			
+			/* =logo
+			-----------------------------------------------------------------------------------------------*/
+			
+			a#logo{ display:block; float:left; }
+			a#logo img{ display:block; }
+			
+			/* =getintouch
+			-----------------------------------------------------------------------------------------------*/
+			
+			.get-in-touch{ text-align:right; margin-bottom:40px; }
+			
+			/* =dropdown-menu
+			-----------------------------------------------------------------------------------------------*/
+	
+			/* level 1 menu */
+			ul#dropdown-menu{  float:right; list-style:none; margin-bottom:0px; }		  
+			ul#dropdown-menu li{ float: left; }
+			ul#dropdown-menu li a{ display: block; padding:7px 21px 5px 0; font-size:14px; text-transform:uppercase; color:#252525; }			   
+			ul#dropdown-menu li.hover, ul.dropdown-menu li:hover{ position: relative; }
+			ul#dropdown-menu li.hover a{ text-decoration:none; } /* styleing when hovering on menu item a */					 
+			ul#dropdown-menu li.current > a{ color:#346699; }							   
+			ul#dropdown-menu li .sub-menu li a{ color:#252525; }							   
+			ul#dropdown-menu li.last > a{ padding-right:0px; }
+			
+				/* level 2 menu */
+				ul#dropdown-menu ul{ position:absolute; top:100%; left:0; width:180px; list-style:none; display:none; 
+									  border:1px solid #efefef; border-bottom:none; background-color:#ffffff; z-index:35; }				 
+				ul#dropdown-menu ul li{ width:180px; }				
+				ul#dropdown-menu ul li a{ width:160px; display: inline-block; border:none; padding:5px 10px; text-transform:none; 
+										  font-weight:normal; border-bottom:1px solid #efefef; color:#666666; } /* IE 6 and 7 Needs Inline Block */			  
+				ul#dropdown-menu ul li a:hover{ background-color:#f5f5f5; } 
+			
+					/* level 3 menu */
+					ul#dropdown-menu ul ul{ left:100%; top:-1px; }
+					ul#dropdown-menu li:hover > ul{ visibility:visible; }
+			
+			.arrow{ background:url(images/bg-sidenav.gif) no-repeat 165px 12px; }
+
+			/* =inner-page
+			-----------------------------------------------------------------------------------------------*/	
+			
+			.inner-page-title-container{ position:relative; height:220px; }
+				.inner-page-title{ position:absolute; top:0; left:0; background:url(images/bg-slider.png) repeat top left; 
+								   padding:65px 25px 0 25px; width:170px; height:155px; overflow:hidden; }		
+					.inner-page-title h2{ color:#ffffff; }
+					.inner-page-title  p{ color:#999999; margin-bottom:0; }								  
+					.inner-page-title  a{ color:#F8971C; text-decoration:underline; }
+
+
+		#content{ }
+		
+		
+			/* =pdf
+			-----------------------------------------------------------------------------------------------*/
+			.pdf{ background:url(images/bg-pdf.png) no-repeat 5px 12px; padding:15px 10px 10px 65px; width:125px; min-height:48px; }
+			
+			/* =side-nav
+			-----------------------------------------------------------------------------------------------*/
+			
+			.side-nav{ list-style-type:none; list-style-position:outside; border-top:1px solid #efefef; width:200px; }
+			.side-nav li{ border-bottom:1px solid #efefef; }
+			.side-nav li a:hover{ }
+			.side-nav li a{ display:block; padding:5px 0 5px 25px; background:#ffffff url(images/bg-sidenav.gif) no-repeat 10px 12px; }
+			.side-nav li.current a{ color:#000000; }
+			.side-nav li.current a:hover{ text-decoration:none; }
+			
+			/* =tabs
+			-----------------------------------------------------------------------------------------------*/
+			.tabs-menu{ margin-bottom:0; list-style:none; }
+			.tabs-menu li{ display:inline; }
+			.tabs-menu li a{ float:left; padding:5px 20px; display:block; border-right:1px solid #ffffff; border-top:2px solid #ffffff; }
+			.tabs-menu li.current a{ background-color:#f5f5f5; border-top:2px solid #efefef; color:#666; }
+			.tabs-content{ padding:30px 20px; background-color:#f5f5f5; margin-bottom:20px; }
+			
+			/* =accordion
+			-----------------------------------------------------------------------------------------------*/
+			.accordion { list-style-type: none;  }
+			.accordion li { background:#212121; cursor: pointer; float: left; display: block; width:100%; }
+			.accordion li.current>a { background: url(images/bg-accordion.png) no-repeat right 8px; }
+			.accordion li div { padding:20px 20px; background:#f5f5f5; }
+			.accordion li a{ text-decoration: none; display: block; cursor: pointer; background: url(images/bg-accordion.png) no-repeat right -55px; 
+							 padding:5px; border-bottom:1px solid #ffffff;  padding:5px 20px; color:#fff; }
+
+
+		#footer{ padding-bottom:30px; }
+	
+
+			/* =footer-nav
+			-----------------------------------------------------------------------------------------------*/
+			
+			.footer-nav-1, .footer-nav-2{  list-style-type:none; list-style-position:outside; margin-bottom:0; float:left; }
+			.footer-nav-2{ margin-left:20px; }
+
+			/* =newsletter-subscribe
+			-----------------------------------------------------------------------------------------------*/
+			
+			#newsletter-subscribe fieldset{ border:none; margin:0; padding:0; position:relative; margin-bottom:15px; }
+			#subscribe-email{ margin:0; padding:5px; height:15px; width:208px; font-size:12px; border:1px solid #e1e1e1; color:#cccccc; }
+			#subscribe-email:focus{ border:1px solid #cccccc; color:#666666; }
+			#newsletter-subscribe .subscribe-submit-btn{ position:absolute; top:1px; right:1px; padding:0 5px 0 5px; width:55px;
+														 height:25px; cursor:pointer; border: none; background-color:#e1e1e1; color:#666666; }
+			
+			.ie6 #newsletter-subscribe .subscribe-submit-btn, .ie7 #newsletter-subscribe .subscribe-submit-btn{ top:2px; }
+			.ie6 #subscribe-email, .ie7 #subscribe-email, .ie8 #subscribe-email{ border:1px solid #cccccc; }
+			
+			/* =social-media
+			-----------------------------------------------------------------------------------------------*/
+			
+			#social-media{ list-style-type:none; margin-bottom:0; }
+			#social-media li{ float:left; }
+			#social-media li img{ display:block; float:left; margin-right:5px; }
+			#social-media li a{ display:block; float:left; margin-right:5px; line-height:18px; }
+
+
+/* =PAGES
+-----------------------------------------------------------------------------------------------*/	
+				
+/* =INDEX
+-----------------------------------------------------------------------------------------------*/				
+			
+	/* =slideshow-index
+	-----------------------------------------------------------------------------------------------*/
+	
+	#slideshow-index{ position:relative; z-index:10; }
+	
+		#slideshow-index ul{ position:relative; width:940px; height:350px; overflow:hidden; margin-bottom:0; list-style:none; z-index:15; }
+		#slideshow-index ul li{ width:940px; height:350px; position:relative; }
+		#slideshow-index ul li img{ position:absolute; top:0; left:0; z-index:20; }
+		
+			#slideshow-index ul li .slidetext{ position:absolute; bottom:65px; right:0px; z-index:25; overflow:hidden;
+											   padding:45px 50px; width:360px; height:130px; background:url(images/bg-slider.png) repeat top left; }
+				.slidetext h2{ color:#fff; }
+				.slidetext p{ color:#999; margin-bottom:0; }								  
+				.slidetext a{ color:#fff; text-decoration:underline; }	
+									
+	#index-slideshow-pager{ width:200px; text-align:left; z-index:35; position:absolute; left:20px; bottom:12px;  }
+	.ie7 #index-slideshow-pager{ bottom:15px; }								  
+	#index-slideshow-pager a{ text-align:left; background:url(images/bg-pager.png) no-repeat 0 0; display:inline-block; 
+							 width:14px; height:14px; margin-left:1px; outline-style:none; text-indent:-9999px; }
+	#index-slideshow-pager .activeSlide{ background:url(images/bg-pager.png) no-repeat 0 -64px; }
+	
+	/* =services-overview
+	-----------------------------------------------------------------------------------------------*/
+	
+	#services-overview{ list-style-type:none; list-style-position:outside; margin-bottom:0; }
+		#services-overview li{ width:180px; padding:19px; border:1px solid #efefef; float:left; margin-left:20px; overflow:hidden; position:relative; }
+		#services-overview li:hover{ cursor:pointer; }
+		#services-overview li.first{ margin-left:0;}
+		.services-overview-overlay{ position:absolute; top:12px; right:10px; width:30px; height:30px; background:url(images/bg-fade.png) no-repeat center center; }
+	
+	/* =news-box
+	-----------------------------------------------------------------------------------------------*/
+	
+	#news-box{ list-style-type:none; list-style-position:outside; margin-bottom:0; }
+		#news-box li{ padding:15px 0; border-bottom:1px solid #efefef; }
+		#news-box li span{ color:#999999; }
+		#news-box li.first{ padding-top:5px;  }
+		#news-box li.last{ border-bottom:none; }
+	
+	/* =clients
+	-----------------------------------------------------------------------------------------------*/
+	
+	#clients-overview{}
+	#clients-overview .client{ width:98px; height:75px; border:1px solid #efefef; float:left; margin-right:20px; }
+	#clients-overview .last{ margin-right:0; }
+	
+	
+/* =TEAM
+-----------------------------------------------------------------------------------------------*/
+	
+	.team-social-media{ list-style-type:none; margin-bottom:0; }
+	.team-social-media li{ float:left; }
+	.team-social-media li img{ display:block; float:left; margin-right:5px; }
+	.team-social-media li a{ display:block; float:left; margin-right:5px; line-height:14px; }
+
+
+/* =NEWS
+-----------------------------------------------------------------------------------------------*/
+	
+	.news-picker{}
+	.news-picker strong{ width:50px; display:block; float:left; }
+	
+	.news{}
+	.date{ color:#999999; margin-bottom:0;}
+			
+			
+/* =TESTIMONIALS
+-----------------------------------------------------------------------------------------------*/
+	
+	.latest-clients{}
+		
+	.client{}	
+	.client-logo{ width:208px; height:135px; border:1px solid #efefef; margin-bottom:20px; }
+	.client p{ color:#999999; }
+	
+	.latest-clients-list{}
+	.latest-clients-list p{ line-height:30px; }
+		
+	.testimonial{}				
+	
+			
+/* =SERVICES
+-----------------------------------------------------------------------------------------------*/
+
+	.services{}
+	.services li{ margin-bottom:20px; }			
+			
+			
+/* =PORTOFOLIO
+-----------------------------------------------------------------------------------------------*/
+	
+	.portfolio-item{}
+		.portfolio-item-preview{ display:block; background:url(images/bg-fade.png) no-repeat center center;  }
+		.ie6 .portfolio-item-preview{ background:none; }
+		
+	.pagination{ list-style:none; }
+		.pagination li{ display:inline; border:1px solid #efefef; margin-right:7px;  padding:4px 9px; float:left;  }
+		.pagination li a{ display:block;  }
+		.pagination li.current a{ text-decoration:underline; }
+
+
+	/* =slideshow-portofolio
+	-----------------------------------------------------------------------------------------------*/
+		
+	#slideshow-portfolio{ position:relative; }
+	
+		#slideshow-portfolio ul{ position:relative; width:700px; height:300px; overflow:hidden; margin-bottom:0; list-style:none; }
+		#slideshow-portfolio ul li{ width:700px; height:300px; position:relative; }
+		#slideshow-portfolio ul li img{ position:absolute; top:0; left:0; }
+
+		#portfolio-slideshow-pager{ width:200px; text-align:right; z-index:35; position:absolute; right:20px; bottom:12px;  }
+		.ie7 #portfolio-slideshow-pager{ bottom:15px; }								  
+			#portfolio-slideshow-pager a{ text-align:left; background:url(images/bg-pager.png) no-repeat 0 0; display:inline-block; 
+										  width:14px; height:14px; margin-left:1px; outline-style:none; text-indent:-9999px; }
+			#portfolio-slideshow-pager .activeSlide{ background:url(images/bg-pager.png) no-repeat 0 -64px; }		
+		
+
+/* =BLOG
+-----------------------------------------------------------------------------------------------*/
+	
+	.blog-sidebar{}
+	.blog-sidebar .date{ padding-right:0; }
+
+	.blog{}
+	.blog-post{}
+	
+	.comment{ margin-bottom:20px; }
+	.comment .who{ margin-bottom:5px; }
+	
+	/* =search
+	-----------------------------------------------------------------------------------------------*/
+
+	#search fieldset{ position:relative; border:none; margin:0; margin-top:0; padding:0; }
+	#search-input{ width:208px; padding:5px; margin:0;  font-size:12px; border:1px solid #e1e1e1; color:#cccccc; }
+	#search-input:focus{ border:1px solid #cccccc; color:#666666; }
+	#search .search-submit-btn{ position:absolute; top:5px; right:5px; height:17px; width:20px; outline:none;
+								background:url(images/bg-search.png) no-repeat top left; cursor:pointer; border:none; }
+
+	.ie6 #search .search-submit-btn{ top:6px; }
+	.ie6 #search-input, .ie7 #search-input, .ie8 #search-input{  }
+
+
+/* =CONTACT
+-----------------------------------------------------------------------------------------------*/		
+	
+	#contact-form{}
+	#contact-form fieldset{ margin:0; padding:15px 0 15px 0; }
+	#contact-form p{ padding:5px 0 5px 25px; margin:1px; }
+	p#formstatus{ border:none; border-bottom:1px solid #efefef; padding-right:25px; margin-bottom:10px; }
+		
+		
