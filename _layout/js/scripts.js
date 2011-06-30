@@ -1,3 +1,9 @@
+function email (login, serv)
+{
+	eml = login +  "@" + serv;
+	document.write ('<a href="mailto:' + eml + '">' + eml + '</a>');
+}	
+
 (function($){	
 	
 	// -------------------------------------------------------------------------------------------------------
