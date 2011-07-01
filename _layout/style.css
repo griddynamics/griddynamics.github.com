@@ -263,7 +263,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 			.accordion li { background:#212121; cursor: pointer; float: left; display: block; width:100%; }
 			.accordion li.current>a { background: url(images/bg-accordion.png) no-repeat right 8px; }
 			.accordion li div { padding:20px 20px; background:#f5f5f5; }
-			.accordion li a{ text-decoration: none; display: block; cursor: pointer; background: url(images/bg-accordion.png) no-repeat right -55px; 
+			.accordion li a.slide { text-decoration: none; display: block; cursor: pointer; background: url(images/bg-accordion.png) no-repeat right -55px; 
 							 padding:5px; border-bottom:1px solid #ffffff;  padding:5px 20px; color:#fff; }
 
 
