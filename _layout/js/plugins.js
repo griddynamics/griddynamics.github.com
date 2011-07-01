@@ -50,7 +50,7 @@
 		// -------------------------------------------------------------------------------------------------------
 		
 		$('#slideshow-index ul').cycle({
-			timeout: 5000,// milliseconds between slide transitions (0 to disable auto advance)
+			timeout: 10000,// milliseconds between slide transitions (0 to disable auto advance)
 			fx: 'fade',// choose your transition type, ex: fade, scrollUp, shuffle, etc...            
 			pager: '#index-slideshow-pager',// selector for element to use as pager container
 			delay: 0, // additional delay (in ms) for first transition (hint: can be negative)
