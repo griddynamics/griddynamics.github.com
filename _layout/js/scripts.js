@@ -74,7 +74,10 @@ function email (login, serv)
 			);
 		 
 		 $("#services-overview li").click(function(){
-			 window.location=$(this).find("a").attr("href");
+			 var url = $(this).find("a").attr("href");
+			 if (url != undefined) {
+				window.location=$(this).find("a").attr("href");
+			 }
 			 return false;
 		});
 		 
